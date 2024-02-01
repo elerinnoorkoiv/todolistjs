@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+ 	<head>
+ 		<title>todo list</title>
+ 		<meta charset="UTF-8">
+ 		<meta charset="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="updatetask.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+    <body>
+    	<div class="container">
+    		<!--Page Content goes here -->
+    		<div class="row">
+			    <div class="col s12 m6">
+			    	<div class="card">
+			        	<div class="card-content">
+			        		<% if(error !== null){ %>
+			        		<div class="row teal lighten-4">
+			        			<div class="col s12">
+			        				<p class="center-align"><%= error %></p>
+			        			</div>
+			        		</div>
+			        		<% } %>	
+							<div class="title-container">
+								<span class="card-title">Update Task</span>
+							</div>	        		
+			          		<div class="row">
+						    	<form class="col s12" method="post" action="/update-task/">
+						      		<div class="row">
+						        		<div class="input-field col s12">
+						          			<input placeholder="Task" id="task" type="text" name="task" value="<%= taskText %>">
+						          			<label for="task">Task label</label>
+						        		</div>
+						       		</div>
+						        	<input class="btn" type="submit" value="Update Task">
+						        	<input type="hidden" name="taskId" value="<%= id %>">
+						        	<a href="/" class="btn">Cancel</a>
+						    	</form>
+						    </div>
+						</div>
+			      	</div>
+			    </div>
+			</div>
+    	</div>
+    	<!-- Compiled and minified JavaScript -->
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+    </html>    
+
+
